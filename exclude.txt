@@ -1,0 +1,14 @@
+bitrix/
+images/
+upload
+includes/
+*.jpg
+*.JPG
+*.pdf
+*.mp4
+*.docx
+*.ico
+*.doc
+*.Pdf
+*.png
+*.Png
