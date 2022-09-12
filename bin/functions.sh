@@ -81,13 +81,13 @@ createArchive(){
 createDumpDb(){
   ShowMessage "CREATE DUMP DB"
   # shellcheck disable=SC2154
-  mysqldump --login-path=backupdb --no-tablespaces "${DB_NAME}" > "${backup_db_dir}"/"${DB_NAME}"_"${date}".sql.gz
+  mysqldump --login-path=backupdb --no-tablespaces "${DB_NAME}" > "${backup_db_dir}"/"${DB_NAME}"_"${DATE}".sql.gz
 }
 
 # Remote old DB dump
 remoteDumpDb(){
   ShowMessage "REMOVE DUMP DB"
-  find "${backup_db_dir}" -type f ! -name "${DB_NAME}_${date}.sql.gz" -delete
+  find "${backup_db_dir}" -type f ! -name "${DB_NAME}_${DATE}.sql.gz" -delete
 }
 
 # Remote old DB dump
