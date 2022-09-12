@@ -86,25 +86,25 @@ backup
 
 ## Запуск скрипта (вручную)
 - Запуск ежедневного бекапа
-> /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh
+> /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh
 
 - Запуск еженедельного бекапа
-> /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh
+> /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh
 
 - Запуск ежемесячного бекапа
-> /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh
+> /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh
 
 - Запуск ежедневного бекапа с логированием
-> /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
+> /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
 
 ---
 
 ## Запуск скрипта (CRON)
-> 0 6 * * * /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
+> 0 6 * * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
 >
-> 0 5 */7 * * /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh >> /{путь до папки с скриптами}/ex-backup/logs/week.log
+> 0 5 */7 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh >> /{путь до папки с скриптами}/ex-backup/logs/week.log
 >
-> 0 7 15 * * /bin/bash /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh >> /{путь до папки с скриптами}/ex-backup/logs/month.log
+> 0 7 15 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh >> /{путь до папки с скриптами}/ex-backup/logs/month.log
 ---
 
 ## Ошибки в работе

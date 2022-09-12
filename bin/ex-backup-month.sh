@@ -65,10 +65,10 @@ ls | grep -v "${DATE}" | xargs rm -rf
 # Create backup DB
 # shellcheck disable=SC2034
 backup_db_dir=${BACKUP_DB_MONTH}
-createBumpDb
+createDumpDb
 
 # Remote old backup DB
-remoteBumpDb
+remoteDumpDb
 
 # Working time
 workTime
