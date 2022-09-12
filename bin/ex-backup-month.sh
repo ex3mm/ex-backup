@@ -63,6 +63,8 @@ cd "${BACKUP_DIR_MONTH}"
 ls | grep -v "${DATE}" | xargs rm -rf
 
 # Create backup DB
+# shellcheck disable=SC2034
+backup_db_dir=${BACKUP_DB_MONTH}
 createBumpDb
 
 # Remote old backup DB

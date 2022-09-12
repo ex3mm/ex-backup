@@ -78,15 +78,22 @@ createArchive(){
 }
 
 # Create DB dump
-createBumpDb(){
+createDumpDb(){
   ShowMessage "CREATE DUMP DB"
-  # mysqldump -u${DB_USER} -p${DB_PASSWORD} ${DB_NAME} | gzip > ${backup_db_dir}/${DB_NAME}_"${date}".sql.gz
+  # shellcheck disable=SC2154
+  mysqldump --login-path=backupdb --no-tablespaces "${DB_NAME}" > "${backup_db_dir}"/"${DB_NAME}"_"${date}".sql.gz
 }
 
 # Remote old DB dump
-remoteBumpDb(){
+remoteDumpDb(){
   ShowMessage "REMOVE DUMP DB"
-  # find ${backup_db_dir} -type f ! -name "${DB_NAME}_${date}.sql.gz" -delete
+  find "${backup_db_dir}" -type f ! -name "${DB_NAME}_${date}.sql.gz" -delete
+}
+
+# Remote old DB dump
+remoteDumpDbDay(){
+  ShowMessage "REMOVE DUMP DB"
+  find "${backup_db_dir}" -type d -mtime +"${SAVE_DAYS}" -exec rm -rf {} \;
 }
 
 # Working Time
@@ -96,4 +103,12 @@ workTime(){
   WORKTIME=$(( $END - $START ))
   # shellcheck disable=SC2027
   ShowMessage "SCRIPT WORK TIME: "${WORKTIME}" sec."
+}
+
+# Delete old backups - day
+removeOldDays(){
+  ShowMessage "REMOVE OLD ARCHIVE"
+  # shellcheck disable=SC2164
+  cd "${BACKUP_DIR_DAY}"
+  find "${BACKUP_DIR_DAY}" -type d -mtime +"${SAVE_DAYS}" -exec rm -rf {} \;
 }
