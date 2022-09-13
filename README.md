@@ -100,11 +100,11 @@ backup
 ---
 
 ## Запуск скрипта (CRON)
-> 0 6 * * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
+> 1 6 * * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-day.sh >> /{путь до папки с скриптами}/ex-backup/logs/day.log
 >
-> 0 5 */7 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh >> /{путь до папки с скриптами}/ex-backup/logs/week.log
+> 2 5 1,6,13,19,25 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-week.sh >> /{путь до папки с скриптами}/ex-backup/logs/week.log
 >
-> 0 7 15 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh >> /{путь до папки с скриптами}/ex-backup/logs/month.log
+> 3 7 13 * * /{путь до папки с скриптами}/ex-backup/bin/ex-backup-month.sh >> /{путь до папки с скриптами}/ex-backup/logs/month.log
 ---
 
 ## Ошибки в работе
