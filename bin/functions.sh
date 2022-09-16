@@ -93,7 +93,7 @@ remoteDumpDb(){
 # Remote old DB dump
 remoteDumpDbDay(){
   ShowMessage "REMOVE DUMP DB"
-  find "${backup_db_dir}" -type d -mtime +"${SAVE_DAYS}" -exec rm -rf {} \;
+  find "${backup_db_dir}" -type d -mtime "${SAVE_DAYS}" -exec rm -rf {} \;
 }
 
 # Working Time
@@ -110,5 +110,5 @@ removeOldDays(){
   ShowMessage "REMOVE OLD ARCHIVE"
   # shellcheck disable=SC2164
   cd "${BACKUP_DIR_DAY}"
-  find "${BACKUP_DIR_DAY}" -type d -mtime +"${SAVE_DAYS}" -exec rm -rf {} \;
+  find "${BACKUP_DIR_DAY}" -type d -mtime "${SAVE_DAYS}" -exec rm -rf {} \;
 }
