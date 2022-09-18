@@ -93,7 +93,7 @@ remoteDumpDb(){
 # Remote old DB dump
 remoteDumpDbDay(){
   ShowMessage "REMOVE DUMP DB"
-  find "${backup_db_dir}" -type f -mtime "${SAVE_DAYS}" -exec rm -rf {} \;
+  find "${backup_db_dir}" -type f -mtime +"${SAVE_DAYS}" -exec rm -rf {} \;
 }
 
 # Working Time
